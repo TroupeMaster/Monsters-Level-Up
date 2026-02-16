@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_chestplate"
+    },
+    "title": {
+      "translate": "advancements.stage_two.title"
+    },
+    "description": {
+      "translate": "advancements.stage_two.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stage_two_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "monsters_level_up:stage_one"
+}

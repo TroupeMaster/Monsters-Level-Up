@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:netherrack"
+    },
+    "title": {
+      "translate": "advancements.stage_three.title"
+    },
+    "description": {
+      "translate": "advancements.stage_three.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stage_three_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "monsters_level_up:stage_two"
+}

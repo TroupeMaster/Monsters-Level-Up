@@ -1,0 +1,10 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": "soul_sand_valley",
+  "spawners": {
+    "type": "monsters_level_up:wither_skeleton_horse",
+    "weight": 2,
+    "minCount": 1,
+    "maxCount": 1
+  }
+}

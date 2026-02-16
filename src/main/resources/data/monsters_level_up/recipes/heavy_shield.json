@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:heavy_plating"
+    },
+    "b": {
+      "item": "minecraft:shield"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:heavy_shield",
+    "count": 1
+  }
+}

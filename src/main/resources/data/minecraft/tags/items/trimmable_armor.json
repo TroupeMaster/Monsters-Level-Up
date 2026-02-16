@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "monsters_level_up:guilded_commander_helmet",
+    "monsters_level_up:guilded_commander_chestplate",
+    "monsters_level_up:guilded_commander_leggings",
+    "monsters_level_up:guilded_commander_boots"
+  ]
+}

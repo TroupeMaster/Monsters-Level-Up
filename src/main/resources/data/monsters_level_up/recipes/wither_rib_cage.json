@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "aaa",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:wither_bone"
+    },
+    "b": {
+      "item": "minecraft:soul_sand"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:wither_chestplate",
+    "count": 1
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " a ",
+    "bab",
+    "aca"
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:wither_bone"
+    },
+    "b": {
+      "item": "minecraft:soul_sand"
+    },
+    "c": {
+      "item": "minecraft:bone"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:greatsword_of_the_damneds",
+    "count": 1
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "entity.zombie_dolphin.ambient": {
+    "subtitle": "subtitles.entity.zombie_dolphin.ambient",
+    "sounds": [
+      {
+        "name": "monsters_level_up:zombie_dolphin_idle",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:zombie_dolphin_idle2",
+        "stream": false
+      }
+    ]
+  },
+  "entity.zombie_dolphin.attack": {
+    "subtitle": "subtitles.entity.zombie_dolphin.attack",
+    "sounds": [
+      {
+        "name": "monsters_level_up:zombie_dolphin_attack",
+        "stream": false
+      }
+    ]
+  },
+  "entity.zombie_dolphin.death": {
+    "subtitle": "subtitles.entity.zombie_dolphin.death",
+    "sounds": [
+      {
+        "name": "monsters_level_up:zombie_dolphin_death",
+        "stream": false
+      }
+    ]
+  },
+  "entity.zombie_dolphin.hurt": {
+    "subtitle": "subtitles.entity.zombie_dolphin.hurt",
+    "sounds": [
+      {
+        "name": "monsters_level_up:zombie_dolphin_hurt",
+        "stream": false
+      }
+    ]
+  },
+  "generic.acid_venom.ambient": {
+    "subtitle": "subtitles.generic.acid_venom.ambient",
+    "sounds": [
+      {
+        "name": "monsters_level_up:acid_sizzle",
+        "stream": false
+      }
+    ]
+  },
+  "entity.wither_skeleton_horse.ambient": {
+    "subtitle": "subtitles.entity.wither_skeleton_horse.ambient",
+    "sounds": [
+      {
+        "name": "monsters_level_up:wither_horse_idle1",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:wither_horse_idle2",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:wither_horse_idle3",
+        "stream": false
+      }
+    ]
+  },
+  "entity.wither_skeleton_horse.hurt": {
+    "subtitle": "subtitles.entity.wither_skeleton_horse.hurt",
+    "sounds": [
+      {
+        "name": "monsters_level_up:wither_horse_hurt1",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:wither_horse_hurt2",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:wither_horse_hurt3",
+        "stream": false
+      },
+      {
+        "name": "monsters_level_up:wither_horse_hurt4",
+        "stream": false
+      }
+    ]
+  },
+  "entity.wither_skeleton_horse.death": {
+    "subtitle": "subtitles.entity.wither_skeleton_horse.death",
+    "sounds": [
+      {
+        "name": "monsters_level_up:wither_horse_death",
+        "stream": false
+      }
+    ]
+  }
+}

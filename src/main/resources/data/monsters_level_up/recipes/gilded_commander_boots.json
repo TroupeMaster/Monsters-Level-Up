@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "a a"
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:gilded_ingot"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:guilded_commander_boots",
+    "count": 1
+  }
+}

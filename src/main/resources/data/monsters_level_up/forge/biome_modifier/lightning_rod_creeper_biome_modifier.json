@@ -1,0 +1,17 @@
+{
+  "type": "forge:add_spawns",
+  "biomes": [
+    "plains",
+    "sunflower_plains",
+    "river",
+    "sparse_jungle",
+    "stony_shore",
+    "beach"
+  ],
+  "spawners": {
+    "type": "monsters_level_up:lightning_rod_creeper",
+    "weight": 10,
+    "minCount": 1,
+    "maxCount": 2
+  }
+}

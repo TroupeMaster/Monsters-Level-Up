@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "monsters_level_up:greatsword_of_the_damneds",
+    "monsters_level_up:breaching_hammer",
+    "monsters_level_up:commander_cutlass"
+  ]
+}

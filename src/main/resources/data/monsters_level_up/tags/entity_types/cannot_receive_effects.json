@@ -1,0 +1,25 @@
+{
+  "replace": false,
+  "values": [
+    "monsters_level_up:spider_mother",
+    "monsters_level_up:tamed_wither_skeleton_horse",
+    "monsters_level_up:wither_skeleton_horse",
+    "monsters_level_up:zombie_dolphin",
+    "monsters_level_up:lightning_rod_creeper",
+    "evoker_fangs",
+    "vex",
+    "ravager",
+    "evoker",
+    "blaze",
+    "ender_dragon",
+    "wither",
+    "elder_guardian",
+    "guardian",
+    "shulker",
+    "warden",
+    "witch",
+    "shulker_bullet",
+    "skeleton_horse",
+    "zombie_horse"
+  ]
+}

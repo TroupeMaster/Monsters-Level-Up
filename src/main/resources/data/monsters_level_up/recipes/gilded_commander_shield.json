@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "aaa",
+    "aba",
+    " a "
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:gilded_ingot"
+    },
+    "b": {
+      "item": "minecraft:shield"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:gilded_commander_shield",
+    "count": 1
+  }
+}

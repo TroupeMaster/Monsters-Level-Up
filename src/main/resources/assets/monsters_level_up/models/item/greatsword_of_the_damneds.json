@@ -1,0 +1,7 @@
+{
+  "parent": "monsters_level_up:custom/witherlongsword",
+  "textures": {
+    "0": "monsters_level_up:block/wither_longsword",
+    "particle": "monsters_level_up:item/wither_longsword"
+  }
+}

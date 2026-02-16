@@ -1,0 +1,7 @@
+{
+  "parent": "monsters_level_up:custom/cutlass",
+  "textures": {
+    "0": "monsters_level_up:block/cutlass",
+    "particle": "monsters_level_up:item/cutlass"
+  }
+}

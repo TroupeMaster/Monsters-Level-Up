@@ -1,0 +1,68 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.lightningRodCreeper_walk": {
+			"loop": true,
+			"animation_length": 1.5,
+			"bones": {
+				"leg0": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.75": {
+							"vector": [25, 0, 0]
+						},
+						"1.5": {
+							"vector": [-25, 0, 0]
+						}
+					}
+				},
+				"leg1": {
+					"rotation": {
+						"0.0": {
+							"vector": [25, 0, 0]
+						},
+						"0.75": {
+							"vector": [-25, 0, 0]
+						},
+						"1.5": {
+							"vector": [25, 0, 0]
+						}
+					}
+				},
+				"leg2": {
+					"rotation": {
+						"0.0": {
+							"vector": [25, 0, 0]
+						},
+						"0.75": {
+							"vector": [-25, 0, 0]
+						},
+						"1.5": {
+							"vector": [25, 0, 0]
+						}
+					}
+				},
+				"leg3": {
+					"rotation": {
+						"0.0": {
+							"vector": [-25, 0, 0]
+						},
+						"0.75": {
+							"vector": [25, 0, 0]
+						},
+						"1.5": {
+							"vector": [-25, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.lightningRodCreeper_idle": {
+			"loop": true,
+			"animation_length": 0.0417
+		}
+	},
+	"geckolib_format_version": 2
+}

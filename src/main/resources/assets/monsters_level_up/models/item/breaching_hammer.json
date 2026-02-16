@@ -1,0 +1,7 @@
+{
+  "parent": "monsters_level_up:custom/breaching_hammer",
+  "textures": {
+    "0": "monsters_level_up:block/breaching_hammer",
+    "particle": "monsters_level_up:item/hammer_handle"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "monsters_level_up:spider_mother",
+    "spider",
+    "cave_spider"
+  ]
+}

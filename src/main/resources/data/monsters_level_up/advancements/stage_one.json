@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:iron_chestplate"
+    },
+    "title": {
+      "translate": "advancements.stage_one.title"
+    },
+    "description": {
+      "translate": "advancements.stage_one.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "stage_one_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "monsters_level_up:monsters_level_up_root"
+}

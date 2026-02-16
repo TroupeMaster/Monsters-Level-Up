@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "item": "minecraft:enchanting_table"
+    },
+    "title": {
+      "translate": "advancements.enchanted.title"
+    },
+    "description": {
+      "translate": "advancements.enchanted.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "enchanted_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "monsters_level_up:monsters_level_up_root"
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "monsters_level_up:custom/gilded_shield_block",
+  "textures": {
+    "0": "monsters_level_up:block/gilded_shield",
+    "particle": "monsters_level_up:item/gilded_shield"
+  }
+}

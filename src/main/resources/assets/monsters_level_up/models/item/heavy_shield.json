@@ -1,0 +1,15 @@
+{
+  "parent": "monsters_level_up:custom/heavy_shield",
+  "textures": {
+    "0": "monsters_level_up:block/heavy_shield",
+    "particle": "monsters_level_up:item/heavy_shield"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "blocking": 1
+      },
+      "model": "monsters_level_up:item/heavy_shield_0"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    "a a",
+    "aaa",
+    "bab"
+  ],
+  "key": {
+    "a": {
+      "item": "monsters_level_up:heavy_plating"
+    },
+    "b": {
+      "item": "minecraft:chain"
+    }
+  },
+  "result": {
+    "item": "monsters_level_up:juggernaut_chestplate",
+    "count": 1
+  }
+}
