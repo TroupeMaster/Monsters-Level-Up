@@ -5,6 +5,69 @@
 			"loop": true,
 			"animation_length": 0.0417
 		},
+		"animation.WitherHorse_attack": {
+			"animation_length": 0.375,
+			"bones": {
+				"Head": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [90, 0, 0]
+						},
+						"0.25": {
+							"vector": [-25, 0, 0]
+						},
+						"0.375": {
+							"vector": [0, 0, 0]
+						}
+					},
+					"position": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.0417": {
+							"vector": [0, -2.91, -5.04]
+						},
+						"0.0833": {
+							"vector": [0, -7.83, -8.08]
+						},
+						"0.125": {
+							"vector": [0, -14, -8]
+						},
+						"0.1667": {
+							"vector": [0, -6.34, -7.17]
+						},
+						"0.2083": {
+							"vector": [0, -0.67, -2.33]
+						},
+						"0.25": {
+							"vector": [0, 0, 5]
+						},
+						"0.375": {
+							"vector": [0, 0, 0]
+						}
+					}
+				},
+				"Neck": {
+					"rotation": {
+						"0.0": {
+							"vector": [0, 0, 0]
+						},
+						"0.125": {
+							"vector": [90, 0, 0]
+						},
+						"0.25": {
+							"vector": [-25, 0, 0]
+						},
+						"0.375": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
 		"animation.WitherHorse_eat": {
 			"animation_length": 2.5,
 			"bones": {
@@ -547,6 +610,5 @@
 				}
 			}
 		}
-	},
-	"geckolib_format_version": 2
+	}
 }

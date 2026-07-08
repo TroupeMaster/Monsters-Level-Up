@@ -52,18 +52,19 @@ public class WitherHorseTickProcedure {
 				}
 			});
 		}
-		if (entity.getPersistentData().getDouble("eat") >= 200 && world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude() && !entity.isInWall() && !entity.isInWaterOrBubble() && !entity.isInLava() && !entity.isVehicle()
-				&& (entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
-			entity.getPersistentData().putDouble("eat", 0);
-			if (Math.random() < 0.25) {
-				if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
-					_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 99, false, false));
-				if (entity instanceof WitherSkeletonHorseEntity) {
-					((WitherSkeletonHorseEntity) entity).setAnimation("animation.WitherHorse_eat");
+		if ((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null) {
+			if (entity.getPersistentData().getDouble("eat") >= 200 && world.getBlockState(BlockPos.containing(x, y - 1, z)).canOcclude() && !entity.isInWall() && !entity.isInWaterOrBubble() && !entity.isInLava() && !entity.isVehicle()) {
+				entity.getPersistentData().putDouble("eat", 0);
+				if (Math.random() < 0.25) {
+					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
+						_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, 50, 99, false, false));
+					if (entity instanceof WitherSkeletonHorseEntity) {
+						((WitherSkeletonHorseEntity) entity).setAnimation("animation.WitherHorse_eat");
+					}
 				}
+			} else {
+				entity.getPersistentData().putDouble("eat", (entity.getPersistentData().getDouble("eat") + 1));
 			}
-		} else {
-			entity.getPersistentData().putDouble("eat", (entity.getPersistentData().getDouble("eat") + 1));
 		}
 		if (!((entity instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == null)) {
 			if (entity.getPersistentData().getBoolean("rear") == false) {

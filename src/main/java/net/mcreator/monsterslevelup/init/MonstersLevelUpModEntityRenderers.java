@@ -14,6 +14,7 @@ import net.mcreator.monsterslevelup.client.renderer.WitherSkeletonHorseRenderer;
 import net.mcreator.monsterslevelup.client.renderer.TamedWitherSkeletonHorseRenderer;
 import net.mcreator.monsterslevelup.client.renderer.SpiderMotherRenderer;
 import net.mcreator.monsterslevelup.client.renderer.LightningRodCreeperRenderer;
+import net.mcreator.monsterslevelup.client.renderer.EndermanCloneRenderer;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class MonstersLevelUpModEntityRenderers {
@@ -24,5 +25,6 @@ public class MonstersLevelUpModEntityRenderers {
 		event.registerEntityRenderer(MonstersLevelUpModEntities.SPIDER_MOTHER.get(), SpiderMotherRenderer::new);
 		event.registerEntityRenderer(MonstersLevelUpModEntities.WITHER_SKELETON_HORSE.get(), WitherSkeletonHorseRenderer::new);
 		event.registerEntityRenderer(MonstersLevelUpModEntities.TAMED_WITHER_SKELETON_HORSE.get(), TamedWitherSkeletonHorseRenderer::new);
+		event.registerEntityRenderer(MonstersLevelUpModEntities.ENDERMAN_CLONE.get(), EndermanCloneRenderer::new);
 	}
 }

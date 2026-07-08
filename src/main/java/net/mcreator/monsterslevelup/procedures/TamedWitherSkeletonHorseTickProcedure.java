@@ -24,6 +24,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.core.BlockPos;
 
 import net.mcreator.monsterslevelup.entity.WitherSkeletonHorseEntity;
+import net.mcreator.monsterslevelup.entity.TamedWitherSkeletonHorseEntity;
 import net.mcreator.monsterslevelup.MonstersLevelUpMod;
 
 import java.util.UUID;
@@ -133,5 +134,9 @@ public class TamedWitherSkeletonHorseTickProcedure {
 		if (world instanceof ServerLevel _level)
 			_level.sendParticles(ParticleTypes.SOUL_FIRE_FLAME, (entity.getX() + Mth.nextDouble(RandomSource.create(), -0.5, 0.5)), (entity.getY() + 0.1), (entity.getZ() + Mth.nextDouble(RandomSource.create(), -0.5, 0.5)),
 					Mth.nextInt(RandomSource.create(), 1, 4), 0, 0, 0, 0);
+		if ((entity instanceof TamedWitherSkeletonHorseEntity _datEntI ? _datEntI.getEntityData().get(TamedWitherSkeletonHorseEntity.DATA_rear) : 0) > 0) {
+			if (entity instanceof TamedWitherSkeletonHorseEntity _datEntSetI)
+				_datEntSetI.getEntityData().set(TamedWitherSkeletonHorseEntity.DATA_rear, (int) ((entity instanceof TamedWitherSkeletonHorseEntity _datEntI ? _datEntI.getEntityData().get(TamedWitherSkeletonHorseEntity.DATA_rear) : 0) - 1));
+		}
 	}
 }

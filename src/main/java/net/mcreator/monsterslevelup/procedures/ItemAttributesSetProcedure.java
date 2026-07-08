@@ -54,10 +54,10 @@ public class ItemAttributesSetProcedure {
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.JUGGERNAUT_HELMET.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("b3760679-c6ea-43d6-ae38-ee3173f1fb25"), "juggernautHelmet", (-0.01), AttributeModifier.Operation.ADDITION)));
+						(new AttributeModifier(UUID.fromString("b3760679-c6ea-43d6-ae38-ee3173f1fb25"), "juggernautHelmet", (-0.1), AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.WITHER_HELMET.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("d46c0aa7-c35b-4bfe-866b-265c203f5984"), "witherHelmet", 0.01, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("d46c0aa7-c35b-4bfe-866b-265c203f5984"), "witherHelmet", 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.CHEST) {
@@ -66,22 +66,24 @@ public class ItemAttributesSetProcedure {
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.JUGGERNAUT_CHESTPLATE.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("599f1e07-662d-45a3-a83b-49a4c97c4d74"), "juggernautChestplate", (-0.01), AttributeModifier.Operation.ADDITION)));
+						(new AttributeModifier(UUID.fromString("599f1e07-662d-45a3-a83b-49a4c97c4d74"), "juggernautChestplate", (-0.1), AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.WITHER_CHESTPLATE.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("8bb2ded6-a360-4e1d-9fba-ff8222aeaa10"), "witherChestplate", 0.01, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("8bb2ded6-a360-4e1d-9fba-ff8222aeaa10"), "witherChestplate", 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.LEGS) {
 			if (itemstack.getItem() == MonstersLevelUpModItems.GUILDED_COMMANDER_LEGGINGS.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("00b3162b-dc4f-459b-8e27-cf01c5a39040"), "gildedSpeed", 0.025, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("00b3162b-dc4f-459b-8e27-cf01c5a39040"), "gildedSpeed", 0.15, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.JUGGERNAUT_LEGGINGS.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("4a7bbad0-38d5-434f-a4c2-5a0b961f42d8"), "juggernautLeggings", (-0.01), AttributeModifier.Operation.ADDITION)));
+						(new AttributeModifier(UUID.fromString("4a7bbad0-38d5-434f-a4c2-5a0b961f42d8"), "juggernautLeggings", (-0.1), AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.WITHER_LEGGINGS.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("c3d8194e-781f-4fa4-be8b-0d22ddd23013"), "witherLeggings", 0.01, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
+						(new AttributeModifier(UUID.fromString("c3d8194e-781f-4fa4-be8b-0d22ddd23013"), "witherLeggings", 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 		}
 		if (event instanceof ItemAttributeModifierEvent _event && _event.getSlotType() == EquipmentSlot.FEET) {
@@ -90,10 +92,10 @@ public class ItemAttributesSetProcedure {
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.JUGGERNAUT_BOOTS.get()) {
 				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED,
-						(new AttributeModifier(UUID.fromString("10481933-5fa3-4c8b-a8bc-2d4ba764090a"), "juggernautBoots", (-0.01), AttributeModifier.Operation.ADDITION)));
+						(new AttributeModifier(UUID.fromString("10481933-5fa3-4c8b-a8bc-2d4ba764090a"), "juggernautBoots", (-0.1), AttributeModifier.Operation.MULTIPLY_TOTAL)));
 			}
 			if (itemstack.getItem() == MonstersLevelUpModItems.WITHER_BOOTS.get()) {
-				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("2e6edbd5-1ec1-4ef7-9734-73fbda69b9b1"), "witherBoots", 0.01, AttributeModifier.Operation.ADDITION)));
+				_event.addModifier(net.minecraft.world.entity.ai.attributes.Attributes.MOVEMENT_SPEED, (new AttributeModifier(UUID.fromString("2e6edbd5-1ec1-4ef7-9734-73fbda69b9b1"), "witherBoots", 0.1, AttributeModifier.Operation.MULTIPLY_TOTAL)));
 				_event.addModifier(ForgeMod.STEP_HEIGHT_ADDITION.get(), (new AttributeModifier(UUID.fromString("9bd1b33b-a765-4d45-8d6a-9632864a7f37"), "witherBootsStep", 0.5, AttributeModifier.Operation.ADDITION)));
 			}
 		}

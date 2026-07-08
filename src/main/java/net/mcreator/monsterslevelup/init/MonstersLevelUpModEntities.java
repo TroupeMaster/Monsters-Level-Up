@@ -21,6 +21,7 @@ import net.mcreator.monsterslevelup.entity.WitherSkeletonHorseEntity;
 import net.mcreator.monsterslevelup.entity.TamedWitherSkeletonHorseEntity;
 import net.mcreator.monsterslevelup.entity.SpiderMotherEntity;
 import net.mcreator.monsterslevelup.entity.LightningRodCreeperEntity;
+import net.mcreator.monsterslevelup.entity.EndermanCloneEntity;
 import net.mcreator.monsterslevelup.MonstersLevelUpMod;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -43,6 +44,10 @@ public class MonstersLevelUpModEntities {
 	public static final RegistryObject<EntityType<TamedWitherSkeletonHorseEntity>> TAMED_WITHER_SKELETON_HORSE = register("tamed_wither_skeleton_horse",
 			EntityType.Builder.<TamedWitherSkeletonHorseEntity>of(TamedWitherSkeletonHorseEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3)
 					.setCustomClientFactory(TamedWitherSkeletonHorseEntity::new).fireImmune().sized(1.3975f, 1.6f));
+	public static final RegistryObject<EntityType<EndermanCloneEntity>> ENDERMAN_CLONE = register("enderman_clone",
+			EntityType.Builder.<EndermanCloneEntity>of(EndermanCloneEntity::new, MobCategory.MONSTER).setShouldReceiveVelocityUpdates(true).setTrackingRange(64).setUpdateInterval(3).setCustomClientFactory(EndermanCloneEntity::new)
+
+					.sized(0.6f, 2.9f));
 
 	private static <T extends Entity> RegistryObject<EntityType<T>> register(String registryname, EntityType.Builder<T> entityTypeBuilder) {
 		return REGISTRY.register(registryname, () -> (EntityType<T>) entityTypeBuilder.build(registryname));
@@ -56,6 +61,7 @@ public class MonstersLevelUpModEntities {
 			SpiderMotherEntity.init();
 			WitherSkeletonHorseEntity.init();
 			TamedWitherSkeletonHorseEntity.init();
+			EndermanCloneEntity.init();
 		});
 	}
 
@@ -66,5 +72,6 @@ public class MonstersLevelUpModEntities {
 		event.put(SPIDER_MOTHER.get(), SpiderMotherEntity.createAttributes().build());
 		event.put(WITHER_SKELETON_HORSE.get(), WitherSkeletonHorseEntity.createAttributes().build());
 		event.put(TAMED_WITHER_SKELETON_HORSE.get(), TamedWitherSkeletonHorseEntity.createAttributes().build());
+		event.put(ENDERMAN_CLONE.get(), EndermanCloneEntity.createAttributes().build());
 	}
 }

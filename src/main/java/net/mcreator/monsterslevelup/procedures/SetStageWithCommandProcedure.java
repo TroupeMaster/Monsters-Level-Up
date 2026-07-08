@@ -39,7 +39,7 @@ public class SetStageWithCommandProcedure {
 		} else if ((StringArgumentType.getString(arguments, "type")).equals("getstage")) {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal(("Current stage: " + MonstersLevelUpModVariables.MapVariables.get(world).stage)), false);
-		} else if ((StringArgumentType.getString(arguments, "type")).isEmpty()) {
+		} else {
 			if (entity instanceof Player _player && !_player.level().isClientSide())
 				_player.displayClientMessage(Component.literal("Invalid input."), false);
 			if (entity instanceof Player _player && !_player.level().isClientSide())

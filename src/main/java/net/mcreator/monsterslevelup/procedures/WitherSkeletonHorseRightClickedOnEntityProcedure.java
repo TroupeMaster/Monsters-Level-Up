@@ -16,6 +16,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.InteractionResult;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.Mth;
 import net.minecraft.sounds.SoundSource;
@@ -32,9 +33,9 @@ import java.util.List;
 import java.util.Comparator;
 
 public class WitherSkeletonHorseRightClickedOnEntityProcedure {
-	public static void execute(LevelAccessor world, Entity entity, Entity sourceentity) {
+	public static InteractionResult execute(LevelAccessor world, Entity entity, Entity sourceentity) {
 		if (entity == null || sourceentity == null)
-			return;
+			return InteractionResult.PASS;
 		if ((sourceentity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).getItem() == Items.PHANTOM_MEMBRANE) {
 			if (!(new Object() {
 				public boolean checkGamemode(Entity _ent) {
@@ -84,6 +85,8 @@ public class WitherSkeletonHorseRightClickedOnEntityProcedure {
 				if (!entity.level().isClientSide())
 					entity.discard();
 			}
+			return InteractionResult.SUCCESS;
 		}
+		return InteractionResult.PASS;
 	}
 }

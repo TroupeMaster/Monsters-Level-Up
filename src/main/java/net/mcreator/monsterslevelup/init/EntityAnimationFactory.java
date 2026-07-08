@@ -9,6 +9,7 @@ import net.mcreator.monsterslevelup.entity.WitherSkeletonHorseEntity;
 import net.mcreator.monsterslevelup.entity.TamedWitherSkeletonHorseEntity;
 import net.mcreator.monsterslevelup.entity.SpiderMotherEntity;
 import net.mcreator.monsterslevelup.entity.LightningRodCreeperEntity;
+import net.mcreator.monsterslevelup.entity.EndermanCloneEntity;
 
 @Mod.EventBusSubscriber
 public class EntityAnimationFactory {
@@ -44,6 +45,13 @@ public class EntityAnimationFactory {
 				}
 			}
 			if (event.getEntity() instanceof TamedWitherSkeletonHorseEntity syncable) {
+				String animation = syncable.getSyncedAnimation();
+				if (!animation.equals("undefined")) {
+					syncable.setAnimation("undefined");
+					syncable.animationprocedure = animation;
+				}
+			}
+			if (event.getEntity() instanceof EndermanCloneEntity syncable) {
 				String animation = syncable.getSyncedAnimation();
 				if (!animation.equals("undefined")) {
 					syncable.setAnimation("undefined");

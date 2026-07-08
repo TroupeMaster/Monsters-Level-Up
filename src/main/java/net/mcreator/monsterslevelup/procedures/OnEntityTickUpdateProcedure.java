@@ -15,17 +15,18 @@ import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.entity.monster.EnderMan;
 import net.minecraft.world.entity.monster.Creeper;
 import net.minecraft.world.entity.monster.CaveSpider;
+import net.minecraft.world.entity.TamableAnimal;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.tags.TagKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 
 import net.mcreator.monsterslevelup.network.MonstersLevelUpModVariables;
+import net.mcreator.monsterslevelup.init.MonstersLevelUpModMobEffects;
 import net.mcreator.monsterslevelup.init.MonstersLevelUpModItems;
 import net.mcreator.monsterslevelup.configuration.MonstersLevelUpConfigConfiguration;
 
@@ -71,14 +72,17 @@ public class OnEntityTickUpdateProcedure {
 				final Vec3 _center = new Vec3(x, y, z);
 				List<Entity> _entfound = world.getEntitiesOfClass(Entity.class, new AABB(_center, _center).inflate(20 / 2d), e -> true).stream().sorted(Comparator.comparingDouble(_entcnd -> _entcnd.distanceToSqr(_center))).toList();
 				for (Entity entityiterator : _entfound) {
-					if (entityiterator instanceof Monster && !(entityiterator == entity)) {
-						if (!(entityiterator instanceof LivingEntity _livEnt27 && _livEnt27.hasEffect(MobEffects.MOVEMENT_SPEED))) {
+					if (!(entityiterator == entity) && !((entityiterator instanceof Mob _mobEnt ? (Entity) _mobEnt.getTarget() : null) == entity)
+							&& (entityiterator instanceof Monster || (entityiterator instanceof TamableAnimal _tamIsTamedBy && entity instanceof LivingEntity _livEnt ? _tamIsTamedBy.isOwnedBy(_livEnt) : false)
+									|| (entityiterator instanceof LivingEntity _teamEnt && _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()) != null
+											? _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()).getName()
+											: "")
+											.equals(entity instanceof LivingEntity _teamEnt && _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()) != null
+													? _teamEnt.level().getScoreboard().getPlayersTeam(_teamEnt instanceof Player _pl ? _pl.getGameProfile().getName() : _teamEnt.getStringUUID()).getName()
+													: ""))) {
+						if (!(entityiterator instanceof LivingEntity _livEnt32 && _livEnt32.hasEffect(MonstersLevelUpModMobEffects.CHARGE.get()))) {
 							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20, 0));
-						}
-						if (!(entityiterator instanceof LivingEntity _livEnt29 && _livEnt29.hasEffect(MobEffects.DAMAGE_BOOST))) {
-							if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-								_entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 20, 0));
+								_entity.addEffect(new MobEffectInstance(MonstersLevelUpModMobEffects.CHARGE.get(), 60, 0));
 						}
 					}
 				}

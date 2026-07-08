@@ -17,6 +17,8 @@ public class MonstersLevelUpConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Double> ZOMBIEJUGGERNAUTCHANCE;
 	public static final ForgeConfigSpec.ConfigValue<Double> ZOMBIEJUGGERNAUTSTAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> WITHERSKELETONTRAPCHANCE;
+	public static final ForgeConfigSpec.ConfigValue<String> STAGETHREEREQUIREMENT;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> REQUIREPREVIOUSSTAGES;
 	public static final ForgeConfigSpec.ConfigValue<Double> STAGE0GEARCHANCE;
 	public static final ForgeConfigSpec.ConfigValue<Boolean> ALLOWPREVIOUSGEAR;
 	public static final ForgeConfigSpec.ConfigValue<Double> STAGE1GEARCHANCE;
@@ -33,6 +35,9 @@ public class MonstersLevelUpConfigConfiguration {
 	public static final ForgeConfigSpec.ConfigValue<Boolean> CREEPERSDISABLESHIELDS;
 	public static final ForgeConfigSpec.ConfigValue<Double> MOBSCALLFORHELPSTAGE;
 	public static final ForgeConfigSpec.ConfigValue<Double> SPIDERAPPLYACIDVENOM;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> BLAZEAPPLYFIREVULNERABILITY;
+	public static final ForgeConfigSpec.ConfigValue<Boolean> MAGMACUBESETONFIRE;
+	public static final ForgeConfigSpec.ConfigValue<Double> ENDERMANSUMMONCLONE;
 	static {
 		BUILDER.push("Misc");
 		PLAYSTAGESOUND = BUILDER.comment("If a sound should be played when a player enters a new stage").define("Play stage sound", true);
@@ -47,6 +52,8 @@ public class MonstersLevelUpConfigConfiguration {
 		ZOMBIEJUGGERNAUTCHANCE = BUILDER.define("Zombie Juggernaut spawn chance", (double) 0.01);
 		ZOMBIEJUGGERNAUTSTAGE = BUILDER.comment("Starting at what stage do zombie juggernauts spawn (set to -1 to disable)").define("Zombie Juggernaut spawn stage", (double) 3);
 		WITHERSKELETONTRAPCHANCE = BUILDER.define("Wither Skeleton Trap spawn chance", (double) 0.04);
+		STAGETHREEREQUIREMENT = BUILDER.comment("The ID of the dimension required to enter stage three. By default, this is set to the nether").define("Stage three requirement", "minecraft:the_nether");
+		REQUIREPREVIOUSSTAGES = BUILDER.comment("If the player should have unlocked the previous stage before advancing to the next").define("Require previous stages before advancing", false);
 		BUILDER.pop();
 		BUILDER.push("Mob Gear");
 		STAGE0GEARCHANCE = BUILDER.define("Stage 0 gear chance", (double) 0.2);
@@ -67,6 +74,9 @@ public class MonstersLevelUpConfigConfiguration {
 		CREEPERSDISABLESHIELDS = BUILDER.define("Creepers disable shields", true);
 		MOBSCALLFORHELPSTAGE = BUILDER.comment("The stage at which mobs begin calling for help (set to -1 to disable)").define("Mobs call for help stage", (double) 2);
 		SPIDERAPPLYACIDVENOM = BUILDER.comment("Starting at what stage do spiders apply the Acid Venom effect (set to -1 to disable)").define("Spiders apply acid venom", (double) 3);
+		BLAZEAPPLYFIREVULNERABILITY = BUILDER.define("Blazes apply fire vulnerability", true);
+		MAGMACUBESETONFIRE = BUILDER.define("Magma Cubes set entities on fire", true);
+		ENDERMANSUMMONCLONE = BUILDER.comment("Starting at what stage do endermen summon clones while attacking an entity (set to -1 to disable)").define("Enderman summons clones", (double) 4);
 		BUILDER.pop();
 
 		SPEC = BUILDER.build();

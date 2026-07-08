@@ -56,6 +56,7 @@ import net.minecraft.network.protocol.Packet;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.core.BlockPos;
 
+import net.mcreator.monsterslevelup.procedures.WitherSkeletonHorseEntityIsHurtProcedure;
 import net.mcreator.monsterslevelup.procedures.TamedWitherSkeletonHorseTickProcedure;
 import net.mcreator.monsterslevelup.procedures.TamedWitherSkeletonHorseRightClickedOnEntityProcedure;
 import net.mcreator.monsterslevelup.init.MonstersLevelUpModEntities;
@@ -66,6 +67,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 	public static final EntityDataAccessor<Boolean> SHOOT = SynchedEntityData.defineId(TamedWitherSkeletonHorseEntity.class, EntityDataSerializers.BOOLEAN);
 	public static final EntityDataAccessor<String> ANIMATION = SynchedEntityData.defineId(TamedWitherSkeletonHorseEntity.class, EntityDataSerializers.STRING);
 	public static final EntityDataAccessor<String> TEXTURE = SynchedEntityData.defineId(TamedWitherSkeletonHorseEntity.class, EntityDataSerializers.STRING);
+	public static final EntityDataAccessor<Integer> DATA_rear = SynchedEntityData.defineId(TamedWitherSkeletonHorseEntity.class, EntityDataSerializers.INT);
 	private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
 	private boolean swinging;
 	private boolean lastloop;
@@ -90,6 +92,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 		this.entityData.define(SHOOT, false);
 		this.entityData.define(ANIMATION, "undefined");
 		this.entityData.define(TEXTURE, "wither_skeleton_horse");
+		this.entityData.define(DATA_rear, 0);
 	}
 
 	public void setTexture(String texture) {
@@ -111,7 +114,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 		this.goalSelector.addGoal(1, new MeleeAttackGoal(this, 1.4, false) {
 			@Override
 			protected double getAttackReachSqr(LivingEntity entity) {
-				return 7.84;
+				return 6.76;
 			}
 		});
 		this.goalSelector.addGoal(2, new TemptGoal(this, 1.1, Ingredient.of(Items.PHANTOM_MEMBRANE), false));
@@ -153,6 +156,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 
 	@Override
 	public boolean hurt(DamageSource source, float amount) {
+		WitherSkeletonHorseEntityIsHurtProcedure.execute(this.level(), this);
 		if (source.is(DamageTypes.IN_FIRE))
 			return false;
 		if (source.is(DamageTypes.FALL))
@@ -170,6 +174,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 	public void addAdditionalSaveData(CompoundTag compound) {
 		super.addAdditionalSaveData(compound);
 		compound.putString("Texture", this.getTexture());
+		compound.putInt("Datarear", this.entityData.get(DATA_rear));
 	}
 
 	@Override
@@ -177,6 +182,8 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 		super.readAdditionalSaveData(compound);
 		if (compound.contains("Texture"))
 			this.setTexture(compound.getString("Texture"));
+		if (compound.contains("Datarear"))
+			this.entityData.set(DATA_rear, compound.getInt("Datarear"));
 	}
 
 	@Override
@@ -319,6 +326,24 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 		return PlayState.STOP;
 	}
 
+	private PlayState attackingPredicate(AnimationState event) {
+		double d1 = this.getX() - this.xOld;
+		double d0 = this.getZ() - this.zOld;
+		float velocity = (float) Math.sqrt(d1 * d1 + d0 * d0);
+		if (getAttackAnim(event.getPartialTick()) > 0f && !this.swinging) {
+			this.swinging = true;
+			this.lastSwing = level().getGameTime();
+		}
+		if (this.swinging && this.lastSwing + 7L <= level().getGameTime()) {
+			this.swinging = false;
+		}
+		if (this.swinging && event.getController().getAnimationState() == AnimationController.State.STOPPED) {
+			event.getController().forceAnimationReset();
+			return event.setAndContinue(RawAnimation.begin().thenPlay("animation.WitherHorse_attack"));
+		}
+		return PlayState.CONTINUE;
+	}
+
 	String prevAnim = "empty";
 
 	private PlayState procedurePredicate(AnimationState event) {
@@ -358,6 +383,7 @@ public class TamedWitherSkeletonHorseEntity extends TamableAnimal implements Geo
 	@Override
 	public void registerControllers(AnimatableManager.ControllerRegistrar data) {
 		data.add(new AnimationController<>(this, "movement", 4, this::movementPredicate));
+		data.add(new AnimationController<>(this, "attacking", 4, this::attackingPredicate));
 		data.add(new AnimationController<>(this, "procedure", 4, this::procedurePredicate));
 	}
 
